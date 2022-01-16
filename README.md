@@ -1,16 +1,17 @@
-# tokyo
-This istokyo project
+## Introduction
+This is my Tokyo project repository.
 : classification (snow/rain/...)
 
-### Enviornmet:
+##### Enviornmet (Requirement):
 
-### Data :
+##### Data :
 
-### Using models
+##### Using models
 : randomforest, autoencoder, regression, multimodal ...
 
-### Evaluation :
+##### Evaluation :
 
+## Train
 
 
 
