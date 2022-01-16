@@ -1,6 +1,16 @@
 # tokyo
-tokyo project (snow detection)
+This istokyo project
+: classification (snow/rain/...)
+
+### Enviornmet:
+
+### Data :
+
+### Using models
+: randomforest, autoencoder, regression, multimodal ...
+
+### Evaluation :
 
 
 
-###
+
