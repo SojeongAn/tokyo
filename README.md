@@ -7,7 +7,7 @@ This is my Tokyo project repository.
 ##### Data :
 
 ##### Using models
-: randomforest, autoencoder, regression, multimodal ...
+: random forests, autoe ncoder, regression, multimodal, support vector machine, ensemble...
 
 ##### Evaluation :
 
