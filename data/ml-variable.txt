@@ -1,0 +1,161 @@
+
+int32 time(time)
+    units: hours since 1900-01-01 00:00:00.0
+    long_name: time
+    calendar: gregorian
+current shape = (1,)
+
+int16 crwc(time, level, latitude, longitude)
+    scale_factor: 2.9805789994980286e-10
+    add_offset: 9.766165149755241e-06
+    _FillValue: -32767
+    missing_value: -32767
+    units: kg kg**-1
+    long_name: Specific rain water content
+current shape = (1, 137, 72, 72)
+
+int16 cswc(time, level, latitude, longitude)
+    scale_factor: 2.1833988230910175e-09
+    add_offset: 7.154124583740028e-05
+    _FillValue: -32767
+    missing_value: -32767
+    units: kg kg**-1
+    long_name: Specific snow water content
+current shape = (1, 137, 72, 72)
+
+int16 etadot(time, level, latitude, longitude)
+    scale_factor: 1.5687796433347084e-09
+    add_offset: -6.361228382014123e-08
+    _FillValue: -32767
+    missing_value: -32767
+    units: s**-1
+    long_name: Eta-coordinate vertical velocity
+current shape = (1, 137, 72, 72)
+
+int16 z(time, level, latitude, longitude)
+    scale_factor: 0.23855156943829825
+    add_offset: 7392.227800631296
+    _FillValue: -32767
+    missing_value: -32767
+    units: m**2 s**-2
+    long_name: Geopotential
+    standard_name: geopotential
+current shape = (1, 137, 72, 72)
+
+int16 t(time, level, latitude, longitude)
+    scale_factor: 0.00140014180892165
+    add_offset: 242.80211059804085
+    _FillValue: -32767
+    missing_value: -32767
+    units: K
+    long_name: Temperature
+    standard_name: air_temperature
+current shape = (1, 137, 72, 72)
+
+int16 q(time, level, latitude, longitude)
+    scale_factor: 1.0844288899535259e-07
+    add_offset: 0.0035546177663980418
+    _FillValue: -32767
+    missing_value: -32767
+    units: kg kg**-1
+    long_name: Specific humidity
+    standard_name: specific_humidity
+current shape = (1, 137, 72, 72)
+
+int16 w(time, level, latitude, longitude)
+    scale_factor: 8.030669229644328e-05
+    add_offset: 0.15744282833567552
+    _FillValue: -32767
+    missing_value: -32767
+    units: Pa s**-1
+    long_name: Vertical velocity
+    standard_name: lagrangian_tendency_of_air_pressure
+current shape = (1, 137, 72, 72)
+
+int16 vo(time, level, latitude, longitude)
+    scale_factor: 1.173258662926319e-08
+    add_offset: 3.186983978856568e-06
+    _FillValue: -32767
+    missing_value: -32767
+    units: s**-1
+    long_name: Vorticity (relative)
+    standard_name: atmosphere_relative_vorticity
+current shape = (1, 137, 72, 72)
+
+int16 lnsp(time, level, latitude, longitude)
+    scale_factor: 3.1421351639810765e-06
+    add_offset: 11.441410400978317
+    _FillValue: -32767
+    missing_value: -32767
+    units: ~
+    long_name: Logarithm of surface pressure
+current shape = (1, 137, 72, 72)
+
+int16 d(time, level, latitude, longitude)
+    scale_factor: 1.0646948424713752e-08
+    add_offset: 3.8398600538160715e-06
+    _FillValue: -32767
+    missing_value: -32767
+    units: s**-1
+    long_name: Divergence
+    standard_name: divergence_of_wind
+current shape = (1, 137, 72, 72)
+
+int16 u(time, level, latitude, longitude)
+    scale_factor: 0.002138416237370017
+    add_offset: 40.53007111933493
+    _FillValue: -32767
+    missing_value: -32767
+    units: m s**-1
+    long_name: U component of wind
+    standard_name: eastward_wind
+current shape = (1, 137, 72, 72)
+
+int16 v(time, level, latitude, longitude)
+    scale_factor: 0.0015802010731242096
+    add_offset: -13.580400925121523
+    _FillValue: -32767
+    missing_value: -32767
+    units: m s**-1
+    long_name: V component of wind
+    standard_name: northward_wind
+current shape = (1, 137, 72, 72)
+
+int16 o3(time, level, latitude, longitude)
+    scale_factor: 1.9753632391907265e-10
+    add_offset: 6.541881771347536e-06
+    _FillValue: -32767
+    missing_value: -32767
+    units: kg kg**-1
+    long_name: Ozone mass mixing ratio
+    standard_name: mass_fraction_of_ozone_in_air
+current shape = (1, 137, 72, 72)
+
+int16 clwc(time, level, latitude, longitude)
+    scale_factor: 8.460507007167132e-09
+    add_offset: 0.0002772169725968382
+    _FillValue: -32767
+    missing_value: -32767
+    units: kg kg**-1
+    long_name: Specific cloud liquid water content
+current shape = (1, 137, 72, 72)
+
+int16 ciwc(time, level, latitude, longitude)
+    scale_factor: 2.213299830171282e-09
+    add_offset: 7.252098223539223e-05
+    _FillValue: -32767
+    missing_value: -32767
+    units: kg kg**-1
+    long_name: Specific cloud ice water content
+current shape = (1, 137, 72, 72)
+
+int16 cc(time, level, latitude, longitude)
+    scale_factor: 1.525948758640685e-05
+    add_offset: 0.4999923702562068
+    _FillValue: -32767
+    missing_value: -32767
+    units: (0 - 1)
+    long_name: Fraction of cloud cover
+current shape = (1, 137, 72, 72)
+
+
