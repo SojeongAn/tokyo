@@ -3,6 +3,9 @@
 
 ##### Spatial variables : elevation, ,,.... -> [0, 1] normalization
 
+
 ##### Temporal variables : time, date, ... -> categorical data (time-of-day (1h) / day-of-week / month-of-year)
 
-##### etc : 
+##### ref :
+
+ECMWF Level (137) : https://confluence.ecmwf.int/display/UDOC/L137+model+level+definitions
