@@ -78,24 +78,24 @@ class snowData():
                 time_ = nc.num2date(time[:], time.units, time.calendar) 
                 time_ = dt.datetime.strptime(str(time_[0]),'%Y-%m-%d %H:%M:%S') 
                 time_ = int((time_+self.diff).strftime("%Y%m%d%H")) # time = 0 / point = 1
-                crwc = ds.variables['crwc'][:, :, i, j].reshape(-1) # 2-138
-                cswc = ds.variables['cswc'][:, :, i, j].reshape(-1) # 139-275
-                etadot = ds.variables['etadot'][:, :, i, j].reshape(-1) # 276-412
-                z = ds.variables['z'][:, :, i, j].reshape(-1) # 413-549
-                t = ds.variables['t'][:, :, i, j].reshape(-1) # 550-686
-                q = ds.variables['q'][:, :, i, j].reshape(-1) # 685-823
-                w = ds.variables['w'][:, :, i, j].reshape(-1) # 822-960
-                vo = ds.variables['vo'][:, :, i, j].reshape(-1) # 961-1097
-                lnsp = ds.variables['lnsp'][:, :, i, j].reshape(-1) # 1098-1234
-                d = ds.variables['d'][:, :, i, j].reshape(-1) # 1235-1371
-                u = ds.variables['u'][:, :, i, j].reshape(-1) # 1372-1508
-                v = ds.variables['v'][:, :, i, j].reshape(-1) # 1509-1645
-                o3 = ds.variables['o3'][:, :, i, j].reshape(-1) # 1646-1782
-                clwc = ds.variables['clwc'][:, :, i, j].reshape(-1) # 1783-1919
-                ciwc = ds.variables['ciwc'][:, :, i, j].reshape(-1) # 1920-2056
-                cc = ds.variables['cc'][:, :, i, j].reshape(-1) # 2057-2193
+                crwc = ds.variables['crwc'][:, :, i, j].reshape(-1) # 1-137
+                cswc = ds.variables['cswc'][:, :, i, j].reshape(-1) # 138-274
+                etadot = ds.variables['etadot'][:, :, i, j].reshape(-1) # 275-411
+                z = ds.variables['z'][:, :, i, j].reshape(-1) # 412-548
+                t = ds.variables['t'][:, :, i, j].reshape(-1) # 549-685
+                q = ds.variables['q'][:, :, i, j].reshape(-1) # 686-822
+                w = ds.variables['w'][:, :, i, j].reshape(-1) # 823-959
+                vo = ds.variables['vo'][:, :, i, j].reshape(-1) # 960-1096
+                lnsp = ds.variables['lnsp'][:, :, i, j].reshape(-1) # 1097-1233
+                d = ds.variables['d'][:, :, i, j].reshape(-1) # 1234-1370
+                u = ds.variables['u'][:, :, i, j].reshape(-1) # 1371-1507
+                v = ds.variables['v'][:, :, i, j].reshape(-1) # 1508-1644
+                o3 = ds.variables['o3'][:, :, i, j].reshape(-1) # 1645-1781
+                clwc = ds.variables['clwc'][:, :, i, j].reshape(-1) # 1782-1918
+                ciwc = ds.variables['ciwc'][:, :, i, j].reshape(-1) # 1919-2055
+                cc = ds.variables['cc'][:, :, i, j].reshape(-1) # 2056-2192
                 ml = np.hstack((time_, point, crwc, cswc, etadot, z, t, q, w, vo, 
-                                lnsp, d, u, v, o3, clwc, ciwc, cc)) # (1, 2194)
+                                lnsp, d, u, v, o3, clwc, ciwc, cc)) # (1, 2193)
                 mls.append(ml)
         return np.array(mls)
 
@@ -105,32 +105,32 @@ class snowData():
         with open(fname):
             ds = nc.Dataset(fname, mode='r')
             for point, i, j in self.latlon:
-                lsm = ds.variables['lsm'][:, i, j].reshape(-1) # 2194
-                siconc = ds.variables['siconc'][:, i, j].reshape(-1) # 2195
-                asn = ds.variables['asn'][:, i, j].reshape(-1) # 2196
-                rsn = ds.variables['rsn'][:, i, j].reshape(-1) # 2197
-                sst = ds.variables['sst'][:, i, j].reshape(-1) # 2198
-                sp = ds.variables['sp'][:, i, j].reshape(-1) # 2199
-                sd = ds.variables['sd'][:, i, j].reshape(-1) # 2200
-                msl = ds.variables['msl'][:, i, j].reshape(-1) # 2201
-                blh = ds.variables['blh'][:, i, j].reshape(-1) # 2202
-                tcc = ds.variables['tcc'][:, i, j].reshape(-1) # 2203
-                u10 = ds.variables['u10'][:, i, j].reshape(-1) # 2204
-                v10 = ds.variables['v10'][:, i, j].reshape(-1) # 2205
-                t2m = ds.variables['t2m'][:, i, j].reshape(-1) # 2206
-                d2m = ds.variables['d2m'][:, i, j].reshape(-1) # 2207
-                lcc = ds.variables['lcc'][:, i, j].reshape(-1) # 2208 
-                mcc = ds.variables['mcc'][:, i, j].reshape(-1) # 2209
-                hcc = ds.variables['hcc'][:, i, j].reshape(-1) # 2210
-                skt = ds.variables['skt'][:, i, j].reshape(-1) # 2211
-                swvl1 = ds.variables['swvl1'][:, i, j].reshape(-1) # 2212
-                swvl2 = ds.variables['swvl2'][:, i, j].reshape(-1) # 2213
-                swvl3 = ds.variables['swvl3'][:, i, j].reshape(-1) # 2214
-                swvl4 = ds.variables['swvl4'][:, i, j].reshape(-1) # 2215
-                stl1 = ds.variables['stl1'][:, i, j].reshape(-1) # 2216
-                stl2 = ds.variables['stl2'][:, i, j].reshape(-1) # 2217
-                stl3 = ds.variables['stl3'][:, i, j].reshape(-1) # 2218
-                stl4 = ds.variables['stl4'][:, i, j].reshape(-1) # 2219
+                lsm = ds.variables['lsm'][:, i, j].reshape(-1) # 2193
+                siconc = ds.variables['siconc'][:, i, j].reshape(-1) # 2194
+                asn = ds.variables['asn'][:, i, j].reshape(-1) # 2195
+                rsn = ds.variables['rsn'][:, i, j].reshape(-1) # 2196
+                sst = ds.variables['sst'][:, i, j].reshape(-1) # 2197
+                sp = ds.variables['sp'][:, i, j].reshape(-1) # 2198
+                sd = ds.variables['sd'][:, i, j].reshape(-1) # 2199
+                msl = ds.variables['msl'][:, i, j].reshape(-1) # 2200
+                blh = ds.variables['blh'][:, i, j].reshape(-1) # 2201
+                tcc = ds.variables['tcc'][:, i, j].reshape(-1) # 2202
+                u10 = ds.variables['u10'][:, i, j].reshape(-1) # 2203
+                v10 = ds.variables['v10'][:, i, j].reshape(-1) # 2204
+                t2m = ds.variables['t2m'][:, i, j].reshape(-1) # 2205
+                d2m = ds.variables['d2m'][:, i, j].reshape(-1) # 2206
+                lcc = ds.variables['lcc'][:, i, j].reshape(-1) # 2207 
+                mcc = ds.variables['mcc'][:, i, j].reshape(-1) # 2208
+                hcc = ds.variables['hcc'][:, i, j].reshape(-1) # 2209
+                skt = ds.variables['skt'][:, i, j].reshape(-1) # 2210
+                swvl1 = ds.variables['swvl1'][:, i, j].reshape(-1) # 2211
+                swvl2 = ds.variables['swvl2'][:, i, j].reshape(-1) # 2212
+                swvl3 = ds.variables['swvl3'][:, i, j].reshape(-1) # 2213
+                swvl4 = ds.variables['swvl4'][:, i, j].reshape(-1) # 2214
+                stl1 = ds.variables['stl1'][:, i, j].reshape(-1) # 2215
+                stl2 = ds.variables['stl2'][:, i, j].reshape(-1) # 2216
+                stl3 = ds.variables['stl3'][:, i, j].reshape(-1) # 2217
+                stl4 = ds.variables['stl4'][:, i, j].reshape(-1) # 2218
                 sfc = np.hstack((lsm, siconc, asn, sst, sp, sd, msl, blh, tcc, 
                                 u10, t2m, d2m, lcc, mcc, hcc, skt, swvl1,
                                 swvl2, swvl3, swvl4, stl1, stl2, stl3, stl4)) #(1, 24)
