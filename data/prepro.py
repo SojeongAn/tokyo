@@ -54,16 +54,16 @@ class snowData():
                 mlfile = 'data/{}/ERA5_anal_ml_{}.nc'.format(ym, ymdhm)
                 sfcfile = 'data/{}/ERA5_anal_sfc_{}.nc'.format(ym, ymdhm)
                 if not os.path.isfile(mlfile) or not os.path.isfile(sfcfile):
-                    month_era5.append(np.zeros(((23, 2220))))
+                    month_era5.append(np.zeros(((23, 2221))))
                 else:
                     ml = self.mlDataset(mlfile)              # (23, 2194)
-                    sfc = self.sfcDataset(sfcfile)           # (23, 24)
-                    data = np.concatenate((ml, sfc), axis=1) # (23, 2218)
+                    sfc = self.sfcDataset(sfcfile)           # (23, 25)
+                    data = np.concatenate((ml, sfc), axis=1) # (23, 2219)
                     
                     rr = np.expand_dims(self.radar[self.global_radar_idx], axis=1)
-                    data = np.concatenate((data, rr),  axis=1)
+                    data = np.concatenate((data, rr),  axis=1) # (23, 2220)
                     ptype = np.expand_dims(self.typeDataset(kst), axis=1)
-                    data = np.concatenate((data, ptype) , axis=1)               
+                    data = np.concatenate((data, ptype) , axis=1) # (23, 2221)            
                     month_era5.append(data)                    
                     self.global_radar_idx += 1    
                             
@@ -86,8 +86,8 @@ class snowData():
                 etadot = ds.variables['etadot'][:, :, i, j].reshape(-1) # 276-412
                 z = ds.variables['z'][:, :, i, j].reshape(-1) # 413-549
                 t = ds.variables['t'][:, :, i, j].reshape(-1) # 550-686
-                q = ds.variables['q'][:, :, i, j].reshape(-1) # 685-823
-                w = ds.variables['w'][:, :, i, j].reshape(-1) # 822-960
+                q = ds.variables['q'][:, :, i, j].reshape(-1) # 687-823
+                w = ds.variables['w'][:, :, i, j].reshape(-1) # 824-960
                 vo = ds.variables['vo'][:, :, i, j].reshape(-1) # 961-1097
                 lnsp = ds.variables['lnsp'][:, :, i, j].reshape(-1) # 1098-1234
                 d = ds.variables['d'][:, :, i, j].reshape(-1) # 1235-1371
@@ -134,9 +134,9 @@ class snowData():
                 stl2 = ds.variables['stl2'][:, i, j].reshape(-1) # 2217
                 stl3 = ds.variables['stl3'][:, i, j].reshape(-1) # 2218
                 stl4 = ds.variables['stl4'][:, i, j].reshape(-1) # 2219
-                sfc = np.hstack((lsm, siconc, asn, sst, sp, sd, msl, blh, tcc, 
+                sfc = np.hstack((lsm, siconc, asn, rsn, sst, sp, sd, msl, blh, tcc, 
                                 u10, t2m, d2m, lcc, mcc, hcc, skt, swvl1,
-                                swvl2, swvl3, swvl4, stl1, stl2, stl3, stl4)) #(1, 24)
+                                swvl2, swvl3, swvl4, stl1, stl2, stl3, stl4)) #(1, 25)
                 sfcs.append(sfc)
         return np.array(sfcs)
 
