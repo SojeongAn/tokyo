@@ -135,7 +135,7 @@ class snowData():
                 stl3 = ds.variables['stl3'][:, i, j].reshape(-1) # 2218
                 stl4 = ds.variables['stl4'][:, i, j].reshape(-1) # 2219
                 sfc = np.hstack((lsm, siconc, asn, rsn, sst, sp, sd, msl, blh, tcc, 
-                                u10, t2m, d2m, lcc, mcc, hcc, skt, swvl1,
+                                u10, v10, t2m, d2m, lcc, mcc, hcc, skt, swvl1,
                                 swvl2, swvl3, swvl4, stl1, stl2, stl3, stl4)) #(1, 25)
                 sfcs.append(sfc)
         return np.array(sfcs)
